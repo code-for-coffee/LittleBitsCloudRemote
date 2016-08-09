@@ -15,7 +15,7 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        mSettingsIntent = new Intent(this, LittleBitsPreferencesActivity.class);
+        mSettingsIntent = new Intent(this, CloudBitListActivity.class);
         mGetStartedBtn = (Button) findViewById(R.id.splash_btn_get_started);
         mGetStartedBtn.setOnClickListener(new View.OnClickListener() {
             @Override

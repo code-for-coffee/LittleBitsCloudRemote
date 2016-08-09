@@ -1,6 +1,8 @@
 package org.codeforcoffee.littlebitscloudbitremote;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -42,6 +44,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    // table work
     private String createTokenTable() {
         StringBuilder sb = new StringBuilder();
         sb.append("CREATE TABLE ");
@@ -61,4 +64,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         sb.append(";");
         return sb.toString();
     }
+
+    // crud for littlebits keys
+    public void addToken(String token) {
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(TOKENS_COL_BEARER, token);
+        db.insert(TOKENS_TABLE_NAME, null, cv);
+        db.setTransactionSuccessful();
+        db.endTransaction();
+    }
+
+    public Cursor getTokens() {
+        SQLiteDatabase db = getReadableDatabase();
+        StringBuilder sb = new StringBuilder();
+        sb.append("SELECT * FROM ");
+        sb.append(TOKENS_TABLE_NAME);
+        sb.append(";");
+        return db.rawQuery(sb.toString(), null);
+    }
+
 }
