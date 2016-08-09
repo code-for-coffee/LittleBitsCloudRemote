@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">LittleBits CloudBit Remote</string>
+    <string name="title_cloudbit_detail">CloudBit Detail</string>
+    <string name="splash_header">Welcome!</string>
+    <string name="splash_description">This application will connect to LittleBits and allow you to trigger output on all of your CloudBits with the tap of your finger!</string>
+    <string name="splash_button_get_started">Let\'s get started!</string>
+</resources>

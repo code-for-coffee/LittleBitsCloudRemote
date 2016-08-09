@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditTextPreference android:title="LittleBits OAuth Access Token"
+                        android:key="littlebits_token"
+                        android:summary="This is the AccessToken found after logging in to http://control.littlebitscloud.cc/" />
+</PreferenceScreen>
